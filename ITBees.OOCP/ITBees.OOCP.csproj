@@ -5,6 +5,29 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>ITBees.OOCP</PackageId>
+    <Version>8.0.1</Version>
+    <Authors>ITBees</Authors>
+    <Description>OCPP 1.6J (JSON over WebSocket) central system for EV chargers, hosted inside any ASP.NET Core app: accepts charge point connections, answers the Core profile (BootNotification, Heartbeat, StatusNotification, Authorize, Start/StopTransaction, MeterValues, DataTransfer) through a host handler, and sends remote commands (RemoteStart/StopTransaction, Reset, UnlockConnector, ChangeAvailability, TriggerMessage, Get/ChangeConfiguration). Lenient towards real-life firmware (odd timestamps, kWh/Wh units, numbers as strings). Includes a charge point client used by the tests and the simulator. No dependency on FAS.</Description>
+    <PackageTags>ocpp;ocpp16;ocpp-j;ev;charger;wallbox;websocket;central-system;csms;itbees</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/ITBeesPL/ITBees.OOCP</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591;CS1573</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="ITBees.OOCP.Tests" />
+  </ItemGroup>
 
 </Project>
